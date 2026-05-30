@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Evolutivo</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Highlight.js para código -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- Marked para Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="light">
+    <div class="container">
+        <header>
+            <h1>AI Orchestrator</h1>
+            <div class="selectors">
+                <div class="selector-group">
+                    <label for="provider">IA:</label>
+                    <select id="provider">
+                        <option value="gemini">Gemini 2.0</option>
+                        <option value="openai">OpenAI GPT-4o</option>
+                    </select>
+                </div>
+                <div class="selector-group">
+                    <label for="theme">Tema:</label>
+                    <select id="theme">
+                        <option value="light">Claro</option>
+                        <option value="dark">Oscuro</option>
+                        <option value="catppuccin">Catppuccin</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <main class="chat-container" id="chat-container">
+            <!-- Los mensajes se inyectan aquí -->
+            <div class="message bot">
+                ¡Hola! Soy tu asistente multimodal. Puedo analizar textos, imágenes y documentos. ¿En qué puedo ayudarte hoy?
+            </div>
+        </main>
+
+        <footer class="input-area">
+            <form id="chat-form">
+                <div class="input-row">
+                    <input type="text" id="message-input" placeholder="Escribe tu mensaje..." required autocomplete="off">
+                    <button type="submit" id="send-btn">Enviar</button>
+                </div>
+                <div class="input-row">
+                    <input type="file" id="file-input" multiple accept="image/*,audio/*,.pdf,.doc,.docx,.txt">
+                </div>
+            </form>
+            <div class="token-info" id="token-info">
+                Tokens: Input: 0 | Output: 0 | Total: 0
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
